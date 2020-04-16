@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	GROUP 5 APPLICATION PROFILE
+	Authors: Paige Hasson and Lindsey Wilson
+	Course: LIS 643-01 | Spring 2020 | UNC Greensboro
+	
+	This schema was developed for the collection 'Fine Prints, Japanese, pre-1915'. 
+	Source collection is held by the Library of Congress (https://www.loc.gov/collections/japanese-fine-prints-pre-1915/).
+	
+	Elements are drawn from VRA Core 4.0, Dublin Core Simple, Dublin Core Terms, MODS 3.7, CDWA Lite 1.1, and LIDO 1.0.
+	
+	Application Profile and Element Set development documentation are hosted on a UNCG Google Drive:
+	(https://docs.google.com/spreadsheets/d/1ZRW87KYpauTfCD9zmZ-NLWCjtOzRD3OwORzElYrnhF8/edit?usp=sharing)
+	Documentation requires a UNCG account to access.
+ -->
+ 
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/Group5_Assign3-3_Schema"
+	xmlns:tns="http://www.example.org/Group5_Assign3-3_Schema"
+	elementFormDefault="qualified"
+	xmlns:cdwalite="http://www.getty.edu/CDWA/CDWALite" xmlns:lido="http://www.lido-schema.org" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:Q1="http://www.opengis.net/gml">
+	<import
+		schemaLocation="https://www.loc.gov/standards/vracore/vra.xsd"
+		namespace="http://www.vraweb.org/vracore4.htm">
+        <annotation>
+        	<documentation>VRA Core 4.0 Element Description guidelines: http://www.loc.gov/standards/vracore/VRA_Core4_Element_Description.pdf</documentation>
+        </annotation>
+	</import>
+	<import
+		schemaLocation="https://www.dublincore.org/schemas/xmls/qdc/2008/02/11/dc.xsd"
+		namespace="http://purl.org/dc/elements/1.1/">
+        <annotation>
+        	<documentation>DCMI Element Specifications: https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</documentation>
+        </annotation>
+	</import>
+	<import
+		schemaLocation="https://www.dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd"
+		namespace="http://purl.org/dc/terms/">
+        <annotation>
+        	<documentation>DCMI Element Specifications: https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</documentation></annotation>
+	</import>
+	<import
+		schemaLocation="http://www.loc.gov/standards/mods/v3/mods-3-7.xsd"
+		namespace="http://www.loc.gov/mods/v3">
+        <annotation>
+        	<documentation>MODS User Guidelines Detailed Element Descriptions: http://www.loc.gov/standards/mods/v3/mods-userguide-elements.html</documentation>
+        </annotation>
+	</import>
+	<import
+		schemaLocation="https://raw.githubusercontent.com/lgwilso2/LIS643/master/CDWALite-xsd-public-v1-1.xsd"
+		namespace="http://www.getty.edu/CDWA/CDWALite">
+        <annotation>
+        	<documentation>CDWA Element Guidelines: http://www.getty.edu/research/publications/electronic_publications/cdwa/index.html</documentation>
+        </annotation>
+	</import>
+	<import schemaLocation="http://www.lido-schema.org/schema/v1.0/lido-v1.0.xsd" namespace="http://www.lido-schema.org">
+		<annotation>
+			<documentation>LIDO Element Specifications: http://www.lido-schema.org/schema/v1.0/lido-v1.0-specification.pdf</documentation>
+		</annotation></import>
+
+	<element name="metadata" type="tns:metadataType"></element>
+
+	<complexType name="metadataType">
+		<sequence>
+			<element ref="dc:title" maxOccurs="1" minOccurs="1"></element>
+			<element ref="dc:description" maxOccurs="1" minOccurs="1"></element>
+			<element ref="vra:agentSet" maxOccurs="unbounded"
+				minOccurs="0">
+			</element>
+            <element ref="vra:sourceSet" maxOccurs="1" minOccurs="1"></element>
+            <element ref="vra:locationSet" maxOccurs="unbounded"
+				minOccurs="1">
+			</element>
+			<element ref="vra:rightsSet" maxOccurs="1" minOccurs="1"></element>
+			<element ref="dcterms:isPartOf" maxOccurs="unbounded"
+				minOccurs="1">
+			</element>
+			<element ref="dcterms:isReferencedBy" maxOccurs="unbounded"
+				minOccurs="0">
+			</element>
+			<element ref="dcterms:spatial" maxOccurs="unbounded"
+				minOccurs="0">
+			</element>
+			<element ref="mods:identifier" maxOccurs="unbounded"
+				minOccurs="1">
+			</element>
+			<element ref="mods:note" maxOccurs="unbounded"
+				minOccurs="1">
+			</element>
+			<element ref="mods:originInfo" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element ref="mods:physicalDescription"
+				maxOccurs="unbounded" minOccurs="1">
+			</element>
+			<element ref="mods:recordInfo" maxOccurs="unbounded"
+				minOccurs="1">
+			</element>
+			<element ref="mods:subject" maxOccurs="unbounded"
+				minOccurs="1">
+			</element>
+			<element ref="cdwalite:descriptiveNoteSet"
+				maxOccurs="unbounded" minOccurs="1">
+			</element>
+			<element ref="cdwalite:displayCreationDate"
+				maxOccurs="unbounded" minOccurs="1">
+			</element>
+			<element ref="cdwalite:displayCreator" maxOccurs="unbounded"
+				minOccurs="0">
+			</element>
+			<element ref="cdwalite:objectWorkType" maxOccurs="unbounded"
+				minOccurs="1">
+			</element>
+			<element ref="lido:subjectWrap" maxOccurs="unbounded"
+				minOccurs="1">
+			</element>
+			<element ref="lido:recordWrap" maxOccurs="unbounded"
+				minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+</schema>
