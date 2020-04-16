@@ -14,7 +14,7 @@
 	Documentation requires a UNCG account to access.
 	
 	Created 4/9/2020
-	Last updated 4/16/2020
+	Revised 4/16/2020
  -->
  
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
@@ -70,8 +70,8 @@
 			<element ref="vra:agentSet" maxOccurs="unbounded"
 				minOccurs="0">
 			</element>
-            <element ref="vra:sourceSet" maxOccurs="1" minOccurs="1"></element>
-            <element ref="vra:locationSet" maxOccurs="unbounded"
+			<element ref="vra:source" maxOccurs="1" minOccurs="1"></element>
+			<element ref="vra:locationSet" maxOccurs="unbounded"
 				minOccurs="1">
 			</element>
 			<element ref="vra:rightsSet" maxOccurs="1" minOccurs="1"></element>
